@@ -1,37 +1,38 @@
 import mongoose from "mongoose";
+
 const userSchema = new mongoose.Schema(
     {
         name: {
-            type:String,
-            required:true,
+            type: String,
+            required: true,
+            maxLength: 50,
         },
-        email:{
-            type:String,
-            unique:true,
-            required:true,
+        email: {
+            type: String,
+            required: true,
+            unique: true,
+            minLength: 5,
+            maxLength: 30,
         },
-        mobile:{
-            type:String,
-            required:true,
-            minLength:10,
-            maxLength:10,
+        password: {
+            type: String,
+            required: true,
+            minLength: 6,
         },
-        password:{
-            type:String,
-            required:true,
-            minLength:6,
+        mobile: {
+            type: String,
+            required: true,
         },
-        profilePic:{
-            type:String,
-            default:'',
+        profiePic: {
+            type: String,
+            default: "https://st3.depositphotos.com/6672868/13701/v/450/depositphotos_137014128-stock-illustration-user-profile-icon.jpg",
         },
         isActive:{
             type:Boolean,
             default:true
         }
     },
-    {timestamps: true}
-
+    { timestamps: true }
 );
 
-  export const User = mongoose.model('User',userSchema);
+export const User = mongoose.model("User", userSchema);

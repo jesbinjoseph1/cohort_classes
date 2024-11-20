@@ -27,7 +27,7 @@ const courseSchema = new mongoose.Schema(
             type:String,
             default:"",
         },
-        instructor:[{type:mongoose.Types.ObjectId,ref:"Mentor"}],
+        mentor:[{type:mongoose.Types.ObjectId,ref:"Mentor"}],
     },
     {timestamps: true}
 );

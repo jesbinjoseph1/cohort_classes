@@ -1,7 +1,6 @@
 import { Mentor} from "../models/mentorModel.js";
 import bcrypt from 'bcrypt'; 
 import { generateToken } from "../utils/token.js";
-import { User } from "../models/userModel.js";
 
 
 export const mentorSignup = async(req,res,next)=>{
